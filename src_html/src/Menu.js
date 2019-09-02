@@ -8,7 +8,8 @@ import CardMedia from '@material-ui/core/CardMedia'
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 import Paper from '@material-ui/core/Paper'
-import  BackgroundCard from './BackgroundCard'
+import BackgroundCard from './BackgroundCard'
+import TimerCard from './TimerCard'
 const styles = {
   card: {
     maxWidth: (400 / 3) * 2,
@@ -17,9 +18,9 @@ const styles = {
   media: {
     height: (250 / 3) * 2
   },
-  CardContent:{
-    height:26,
-    padding:10,
+  CardContent: {
+    height: 26,
+    padding: 10
   }
 }
 class Menu extends Component {
@@ -27,30 +28,30 @@ class Menu extends Component {
     super(props)
     // Don't call this.setState() here!
     this.state = { init: 0 }
-    this.clickHandler= props.clickHandler
+    this.clickHandler = props.clickHandler
   }
-  onClick(){
-    if (!this.props.clickable){
+  onClick() {
+    if (!this.props.clickable) {
       return
     }
-    console.log("click from Menu,will call parent onclick")
+    console.log('click from Menu,will call parent onclick')
     this.clickHandler(this.props.page)
   }
   render() {
-    if (this.props.page=='background_card'){
-
-      return(
-        <BackgroundCard/>
-      )
-
-    }else{
-      var image=null
-      if (this.props.image){
-        image=<CardMedia
-          style={styles.media}
-          image={this.props.image}
-          title="Contemplative Reptile"
-        />
+    if (this.props.page == 'background_card') {
+      return <BackgroundCard />
+    } else if (this.props.page == 'timer_card') {
+      return <TimerCard />
+    } else {
+      var image = null
+      if (this.props.image) {
+        image = (
+          <CardMedia
+            style={styles.media}
+            image={this.props.image}
+            title="Contemplative Reptile"
+          />
+        )
       }
 
       return (
@@ -66,7 +67,6 @@ class Menu extends Component {
         </Card>
       )
     }
-
   }
 }
 export default Menu
