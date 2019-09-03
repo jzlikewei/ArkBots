@@ -1,0 +1,87 @@
+{
+  "name": "arkbots",
+  "productName": "arkbots",
+  "description": "A bot for ArkNights",
+  "version": "1.0.0",
+  "homepage": "./",
+  "main": "build/index.js",
+  "author": {
+    "name": "jzlikewei",
+    "email": "jzlikewei@163.com"
+  },
+  "dependencies": {
+    "electron-is-dev": "^1.1.0",
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "dir": "./build/",
+        "out": "../out",
+        "platform": "win32"
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "arkbots"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  },
+  "devDependencies": {
+    "@material-ui/core": "^4.3.3",
+    "@material-ui/icons": "^4.2.1",
+    "@material-ui/styles": "^4.3.3",
+    "is-electron": "^2.2.0",
+    "lodash": "^4.17.15",
+    "react": "^16.9.0",
+    "react-compound-timer": "^1.1.5",
+    "react-dom": "^16.9.0",
+    "react-scripts": "^3.1.1",
+    "@electron-forge/cli": "^6.0.0-beta.44",
+    "@electron-forge/maker-deb": "^6.0.0-beta.44",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.44",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.44",
+    "@electron-forge/maker-zip": "^6.0.0-beta.44",
+    "electron": "6.0.7"
+  },
+  "scripts": {
+    "react-start": "react-scripts start",
+    "react-build": "react-scripts build",
+    "react-test": "react-scripts test --env=jsdom",
+    "react-eject": "react-scripts eject",
+    "elec-start": "electron-forge start public/index.js",
+    "elec-package": "electron-forge package",
+    "elec-make": "electron-forge make",
+    "elec-publish": "electron-forge publish"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

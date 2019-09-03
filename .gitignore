@@ -94,3 +94,5 @@ typings/
 out/
 .idea/
 *.pyc
+backend/build/
+backend/dist/
