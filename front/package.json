@@ -60,7 +60,7 @@
     "@electron-forge/maker-rpm": "^6.0.0-beta.44",
     "@electron-forge/maker-squirrel": "^6.0.0-beta.44",
     "@electron-forge/maker-zip": "^6.0.0-beta.44",
-    "electron": "6.0.7"
+    "electron": "15.5.5"
   },
   "scripts": {
     "react-start": "react-scripts start",
