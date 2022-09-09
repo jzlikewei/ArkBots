@@ -1,6 +1,7 @@
 from SimpleWebSocketServer import SimpleWebSocketServer, WebSocket
 import json
 from BackgroundWorker import BackgroundWorker
+from DiabloWorker import DiabloWorker
 import signal
 import sys
 from logger import log
@@ -18,7 +19,7 @@ class LocalServer(WebSocket):
             server.close()
         if msg['cmd']=='background_mode':
             try :
-                server.worker = BackgroundWorker(msg['stage_key'].upper(),msg['start_key'].upper(),msg['empty_key'].upper(),int(msg['mission_time']))
+                server.worker = DiabloWorker()
                 server.worker.daemon=True
                 server.worker.start()
                 self.sendJson({"msg":"Done"})

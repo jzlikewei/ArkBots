@@ -15,7 +15,7 @@ class KeySender():
         self.handle=0
         self.random_delay=random_delay
         self.sleep_func=sleep_func
-        hwnd = win32gui.FindWindow('Qt5QWindowIcon','明日方舟 - MuMu模拟器')
+        hwnd = win32gui.FindWindow('Qt5QWindowIcon','暗黑破坏神')
         self.handle = win32gui.FindWindowEx( hwnd, 0,None,  "NemuPlayer" )
         log.info('handle = {0}'.format(self.handle))
         if self.handle==0:
